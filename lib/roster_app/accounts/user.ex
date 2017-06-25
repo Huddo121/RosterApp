@@ -8,6 +8,7 @@ defmodule RosterApp.Accounts.User do
     field :display_name, :string
     field :email, :string
     field :password, :string
+    has_many :shifts, RosterApp.Rostering.Shift
 
     timestamps()
   end
