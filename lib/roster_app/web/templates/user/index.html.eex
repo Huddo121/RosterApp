@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Email</th>
       <th>Display name</th>
       <th>Password</th>
@@ -13,6 +14,7 @@
   <tbody>
 <%= for user <- @users do %>
     <tr>
+      <td><%= user.id %></td>
       <td><%= user.email %></td>
       <td><%= user.display_name %></td>
       <td><%= user.password %></td>
