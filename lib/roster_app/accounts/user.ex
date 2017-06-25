@@ -17,6 +17,7 @@ defmodule RosterApp.Accounts.User do
     user
     |> cast(attrs, [:email, :display_name, :password])
     |> validate_required([:email, :display_name, :password])
+    |> validate_format(:email, ~r/.+@.+\..+/, [message: "Please input an email"])
     |> unique_constraint(:email)
   end
 end
