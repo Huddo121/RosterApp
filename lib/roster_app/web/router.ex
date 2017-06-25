@@ -18,6 +18,7 @@ defmodule RosterApp.Web.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/shifts", ShiftController
   end
 
   # Other scopes may use custom stacks.
