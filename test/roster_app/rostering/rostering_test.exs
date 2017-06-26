@@ -64,4 +64,64 @@ defmodule RosterApp.RosteringTest do
       assert %Ecto.Changeset{} = Rostering.change_shift(shift)
     end
   end
+
+  describe "rosters" do
+    alias RosterApp.Rostering.Roster
+
+    @valid_attrs %{name: "some name"}
+    @update_attrs %{name: "some updated name"}
+    @invalid_attrs %{name: nil}
+
+    def roster_fixture(attrs \\ %{}) do
+      {:ok, roster} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Rostering.create_roster()
+
+      roster
+    end
+
+    test "list_rosters/0 returns all rosters" do
+      roster = roster_fixture()
+      assert Rostering.list_rosters() == [roster]
+    end
+
+    test "get_roster!/1 returns the roster with given id" do
+      roster = roster_fixture()
+      assert Rostering.get_roster!(roster.id) == roster
+    end
+
+    test "create_roster/1 with valid data creates a roster" do
+      assert {:ok, %Roster{} = roster} = Rostering.create_roster(@valid_attrs)
+      assert roster.name == "some name"
+    end
+
+    test "create_roster/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Rostering.create_roster(@invalid_attrs)
+    end
+
+    test "update_roster/2 with valid data updates the roster" do
+      roster = roster_fixture()
+      assert {:ok, roster} = Rostering.update_roster(roster, @update_attrs)
+      assert %Roster{} = roster
+      assert roster.name == "some updated name"
+    end
+
+    test "update_roster/2 with invalid data returns error changeset" do
+      roster = roster_fixture()
+      assert {:error, %Ecto.Changeset{}} = Rostering.update_roster(roster, @invalid_attrs)
+      assert roster == Rostering.get_roster!(roster.id)
+    end
+
+    test "delete_roster/1 deletes the roster" do
+      roster = roster_fixture()
+      assert {:ok, %Roster{}} = Rostering.delete_roster(roster)
+      assert_raise Ecto.NoResultsError, fn -> Rostering.get_roster!(roster.id) end
+    end
+
+    test "change_roster/1 returns a roster changeset" do
+      roster = roster_fixture()
+      assert %Ecto.Changeset{} = Rostering.change_roster(roster)
+    end
+  end
 end

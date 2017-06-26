@@ -1,0 +1,13 @@
+<h2>Show Roster</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @roster.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: roster_path(@conn, :edit, @roster) %></span>
+<span><%= link "Back", to: roster_path(@conn, :index) %></span>

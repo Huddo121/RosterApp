@@ -1,0 +1,6 @@
+<h2>New Roster</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: roster_path(@conn, :create) %>
+
+<span><%= link "Back", to: roster_path(@conn, :index) %></span>

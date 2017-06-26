@@ -12,6 +12,12 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :roster_id, class: "control-label" %>
+    <%= number_input f, :roster_id, class: "form-control" %>
+    <%= error_tag f, :roster_id %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :start_time, class: "control-label" %>
     <%= datetime_select f, :start_time, class: "form-control" %>
     <%= error_tag f, :start_time %>
