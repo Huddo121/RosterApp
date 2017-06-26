@@ -6,6 +6,7 @@ defmodule RosterApp.Rostering.Roster do
 
   schema "rostering_rosters" do
     field :name, :string
+    belongs_to :organisation, RosterApp.Organisations.Organisation
 
     timestamps()
   end
@@ -13,7 +14,7 @@ defmodule RosterApp.Rostering.Roster do
   @doc false
   def changeset(%Roster{} = roster, attrs) do
     roster
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :organisation_id])
+    |> validate_required([:name, :organisation_id])
   end
 end

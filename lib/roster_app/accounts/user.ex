@@ -2,6 +2,8 @@ defmodule RosterApp.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias RosterApp.Accounts.User
+  alias RosterApp.Organisations.OrganisationUser
+  alias RosterApp.Organisations.Organisation
 
 
   schema "accounts_users" do
@@ -9,6 +11,7 @@ defmodule RosterApp.Accounts.User do
     field :email, :string
     field :password, :string
     has_many :shifts, RosterApp.Rostering.Shift
+    many_to_many :organisations, Organisation, join_through: OrganisationUser
 
     timestamps()
   end
