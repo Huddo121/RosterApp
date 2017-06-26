@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Id</id>
       <th>Start time</th>
       <th>End time</th>
 
@@ -12,6 +13,7 @@
   <tbody>
 <%= for shift <- @shifts do %>
     <tr>
+      <td><%= shift.id %></td>
       <td><%= shift.start_time %></td>
       <td><%= shift.end_time %></td>
 

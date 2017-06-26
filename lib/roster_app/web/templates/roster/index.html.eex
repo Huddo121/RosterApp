@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
 
       <th></th>
@@ -11,6 +12,7 @@
   <tbody>
 <%= for roster <- @rosters do %>
     <tr>
+      <td><%= roster.id %>
       <td><%= roster.name %></td>
 
       <td class="text-right">
