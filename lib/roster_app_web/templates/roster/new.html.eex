@@ -1,0 +1,5 @@
+<h2>New Roster</h2>
+
+<%= render "form.html", Map.put(assigns, :action, roster_path(@conn, :create)) %>
+
+<span><%= link "Back", to: roster_path(@conn, :index) %></span>

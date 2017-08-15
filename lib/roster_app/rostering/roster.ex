@@ -4,7 +4,7 @@ defmodule RosterApp.Rostering.Roster do
   alias RosterApp.Rostering.Roster
 
 
-  schema "rostering_rosters" do
+  schema "rosters" do
     field :name, :string
     belongs_to :organisation, RosterApp.Organisations.Organisation
 

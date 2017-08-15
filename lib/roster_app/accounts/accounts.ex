@@ -1,6 +1,6 @@
 defmodule RosterApp.Accounts do
   @moduledoc """
-  The boundary for the Accounts system.
+  The Accounts context.
   """
 
   import Ecto.Query, warn: false

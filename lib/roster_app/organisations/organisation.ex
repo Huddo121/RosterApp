@@ -2,13 +2,12 @@ defmodule RosterApp.Organisations.Organisation do
   use Ecto.Schema
   import Ecto.Changeset
   alias RosterApp.Organisations.Organisation
-  alias RosterApp.Organisations.OrganisationUser
 
-  schema "organisations_organisations" do
+
+  schema "organisations" do
     field :name, :string
-    many_to_many :users, RosterApp.Accounts.User, join_through: OrganisationUser
-    has_many :rosters, RosterApp.Rostering.Roster
-
+    many_to_many :users, RosterApp.Accounts.User, join_through: RosterApp.Organisations.OrganisationUser
+    
     timestamps()
   end
 

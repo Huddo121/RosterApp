@@ -8,7 +8,7 @@ defmodule RosterApp.Organisations.OrganisationUser do
   @default_user_relationship :member
   @admin_user_relationship :admin
 
-  schema "organisations_organisations_users" do
+  schema "organisations_users" do
     has_one :organisation, Organisation
     has_one :user, User
     field :relationship, :string, default: @default_user_relationship
@@ -20,6 +20,7 @@ defmodule RosterApp.Organisations.OrganisationUser do
     |> cast(attrs, [:organisation, :user, :relationship])
     |> validate_required([:organisation, :user, :relationship])
     |> validate_inclusion(:relationship, [@default_user_relationship, @admin_user_relationship])
-    |> unique_constraint(:organisation, name: "organisations_organisations_users_unique_index")
+    |> unique_constraint(:organisation, name: "organisations_users_unique_index")
   end
 end
+  

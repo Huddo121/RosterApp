@@ -1,6 +1,6 @@
 defmodule RosterApp.Rostering do
   @moduledoc """
-  The boundary for the Rostering system.
+  The Rostering context.
   """
 
   import Ecto.Query, warn: false

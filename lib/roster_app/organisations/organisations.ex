@@ -1,6 +1,6 @@
 defmodule RosterApp.Organisations do
   @moduledoc """
-  The boundary for the Organisations system.
+  The Organisations context.
   """
 
   import Ecto.Query, warn: false

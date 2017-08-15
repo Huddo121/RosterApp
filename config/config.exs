@@ -10,10 +10,10 @@ config :roster_app,
   ecto_repos: [RosterApp.Repo]
 
 # Configures the endpoint
-config :roster_app, RosterApp.Web.Endpoint,
+config :roster_app, RosterAppWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "PHDNgoXy2ri2ESQKlzM2y7VYa7zXgIgjdZPLvfdRh7ua/0bqODw3YaovU8WiWyGX",
-  render_errors: [view: RosterApp.Web.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "YZGxdz8adjn7At8VMTkT7/0LUFylBZYcyJ6ZFmEPyeAw0slth1qRPeOV6FzfmCM4",
+  render_errors: [view: RosterAppWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: RosterApp.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

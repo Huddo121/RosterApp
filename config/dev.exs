@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :roster_app, RosterApp.Web.Endpoint,
+config :roster_app, RosterAppWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -31,13 +31,13 @@ config :roster_app, RosterApp.Web.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :roster_app, RosterApp.Web.Endpoint,
+config :roster_app, RosterAppWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
-      ~r{lib/roster_app/web/views/.*(ex)$},
-      ~r{lib/roster_app/web/templates/.*(eex)$}
+      ~r{lib/roster_app_web/views/.*(ex)$},
+      ~r{lib/roster_app_web/templates/.*(eex)$}
     ]
   ]
 

@@ -1,4 +1,4 @@
-defmodule RosterApp.Web.ConnCase do
+defmodule RosterAppWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,10 +19,10 @@ defmodule RosterApp.Web.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import RosterApp.Web.Router.Helpers
+      import RosterAppWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint RosterApp.Web.Endpoint
+      @endpoint RosterAppWeb.Endpoint
     end
   end
 

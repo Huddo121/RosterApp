@@ -1,0 +1,5 @@
+<h2>New Organisation</h2>
+
+<%= render "form.html", Map.put(assigns, :action, organisation_path(@conn, :create)) %>
+
+<span><%= link "Back", to: organisation_path(@conn, :index) %></span>

@@ -1,4 +1,4 @@
-defmodule RosterApp.Web.ChannelCase do
+defmodule RosterAppWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,7 +21,7 @@ defmodule RosterApp.Web.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint RosterApp.Web.Endpoint
+      @endpoint RosterAppWeb.Endpoint
     end
   end
 
